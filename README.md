@@ -50,7 +50,7 @@ Testamos vários algoritmos de classificação, utilizando validação cruzada p
 * Regressão Logística *_(Logistic Regression)_*
 * Árvores de Decisão *_(Decision Tree Classifier)_*
 * Florestas Aleatórias *_(Random Forest)_*
-* GradientBoosting *_XGBoost_*
+* GradientBoosting *_(XGBoost_ e *_LightGBM_)*
 * DummyClassifier
 
 O melhor modelo foi uma Regressão Logística.
