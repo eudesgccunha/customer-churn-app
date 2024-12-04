@@ -50,9 +50,10 @@ Esse pré-processamento é essencial para garantir a qualidade dos dados que ali
 
 #### Criar e ativar ambiente virtual do windows (venv)
 
-```venv
+```bash
 python -m venv customer_churn
-source customer_churn/bin/activate
+source customer_churn/bin/activate # para MmacOS e linux
+nome_do_ambiente\Scripts\activate # no windows
 pip install -r requirements.txt
 ```
 
