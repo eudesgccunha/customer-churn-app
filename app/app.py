@@ -17,8 +17,8 @@ and make more informed business decisions.
 
 # -- Model -- #
 
-# Carregar o modelo
-with open('models/model.pkl', 'rb') as file: 
+# Carregar/ler o modelo
+with open('models/churn_model.pkl', 'rb') as file: 
     model = pickle.load(file)
 
 # Opção para carregar um arquivo csv 
