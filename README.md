@@ -33,16 +33,48 @@ A variável-alvo que queremos prever é a coluna “Churn”, que indica se o cl
 
 ### Preparação dos Dados
 
-Realizamos algumas transformações nos dados para prepará-los para o modelo de machine learning:
+Previamente realizamos algumas transformações nos dados para prepará-los para o modelo de machine learning:
 
 * Converter valores ausentes para NaN
 * Substituir NaN por média, mediana ou valor mais frequente
 * Codificar variáveis categóricas como valores numéricos
 * Normalizar os dados para uma escala comum
-* Dividir o conjunto entre treino (80%) e teste (20%)
+* Dividir o conjunto entre treino (70%) e teste (30%)
 
 Esse pré-processamento é essencial para garantir a qualidade dos dados que alimentam o modelo.
 
+### Modelagem
+
+Testamos vários algoritmos de classificação, utilizando validação cruzada para avaliar o desempenho dentro do conjunto de treino:
+
+* Regressão Logística *_(Logistic Regression)_*
+* Árvores de Decisão *_(Decision Tree Classifier)_*
+* Florestas Aleatórias *_(Random Forest)_*
+* GradientBoosting *_XGBoost_*
+* DummyClassifier
+
+O melhor modelo foi uma Regressão Logística.
+
+### Avaliação
+
+Finalmente, avaliamos o desempenho do modelo escolhido no conjunto de teste, obtendo 75,45% de acurácia. Isso indica que o modelo generaliza bem para dados totalmente novos.
+
+Também analisamos a acurácia balanceada, curva ROC, precisão, recall, f1 score e outras métricas relevantes para o negócio.
+
+O modelo final está pronto para ser utilizado em produção.
+
+## Aplicativo Streamlit
+
+Para disponibilizar as previsões, desenvolvemos um aplicativo web usando a biblioteca Streamlit.
+
+A interface permite que o usuário envie novos dados de clientes e receba como resposta a probabilidade estimada de churn para cada um.
+
+O app lê o arquivo com o modelo treinado, faz o preprocessamento dos dados de entrada da mesma forma que nos dados de treino, utiliza o modelo para gerar as previsões e exibe uma tabela com as probabilidades.
+
+O código também permite enviar um arquivo inteiro com múltiplos clientes e obter as previsões em lote, o que é mais eficiente.
+
+Assim, o aplicativo web disponibiliza de forma muito simples e rápida as previsões do nosso modelo de machine learning treinado no Python. <br>
+<br>
 
 
 ---
